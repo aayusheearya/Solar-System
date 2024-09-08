@@ -1,0 +1,97 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('back.jpg') no-repeat center center fixed; /* Replace with your galaxy image URL */
+    background-size: cover;
+    margin: 0;
+}
+
+.solar-system {
+    position: relative;
+    width: 80vmin;
+    height: 80vmin;
+}
+
+.sun {
+    position: absolute;
+    width: 12vmin;
+    height: 12vmin;
+    background-color: yellow;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 20px yellow;
+}
+
+.orbit {
+    position: absolute;
+    border: 1px dashed rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    animation: spin infinite linear;
+}
+
+.planet {
+    position: absolute;
+    width: 3vmin;
+    height: 3vmin;
+    border-radius: 50%;
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.planet .label {
+    color: white;
+    font-size: 1.2vmin; /* Adjust as needed */
+    text-align: center;
+}
+
+/* Planet Colors */
+.mercury { background-color: gray; }
+.venus { background-color: orange; }
+.earth { background-color: blue; }
+.mars { background-color: red; }
+.jupiter { background-color: brown; width: 4vmin; height: 4vmin; }
+.saturn { background-color: goldenrod; width: 3.5vmin; height: 3.5vmin; }
+.uranus { background-color: lightblue; width: 3vmin; height: 3vmin; }
+.neptune { background-color: darkblue; width: 3vmin; height: 3vmin; }
+
+/* Adjust orbits for slower revolution */
+.mercury-orbit { width: 20vmin; height: 20vmin; animation-duration: 10s; }
+.venus-orbit { width: 25vmin; height: 25vmin; animation-duration: 15s; }
+.earth-orbit { width: 30vmin; height: 30vmin; animation-duration: 20s; }
+.mars-orbit { width: 35vmin; height: 35vmin; animation-duration: 25s; }
+.jupiter-orbit { width: 40vmin; height: 40vmin; animation-duration: 30s; }
+.saturn-orbit { width: 45vmin; height: 45vmin; animation-duration: 35s; }
+.uranus-orbit { width: 50vmin; height: 50vmin; animation-duration: 40s; }
+.neptune-orbit { width: 55vmin; height: 55vmin; animation-duration: 45s; }
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 600px) {
+    .solar-system {
+        width: 90vmin;
+        height: 90vmin;
+    }
+    .sun {
+        width: 10vmin;
+        height: 10vmin;
+    }
+    .planet {
+        width: 2.5vmin;
+        height: 2.5vmin;
+    }
+    .label {
+        font-size: 1vmin;
+    }
+}
